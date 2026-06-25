@@ -4,7 +4,7 @@ struct StatusView: View {
     @EnvironmentObject private var accessSession: FileAccessSession
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 Section("File Access") {
                     HStack {

@@ -10,7 +10,7 @@ struct FileRootView: View {
     @State private var alertMessage: String?
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack(spacing: 0) {
                 RootStatusBar(
                     rootURL: rootURL,

@@ -13,7 +13,7 @@ struct PermissionSaveGuideView: View {
     @State private var diagnostics = PermissionDiagnostics.empty
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 Section("Failure") {
                     Text(reason)

@@ -2,11 +2,21 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 Section("App") {
-                    LabeledContent("Name", value: "IPCC Tool")
-                    LabeledContent("Version", value: "1.0")
+                    HStack {
+                        Text("Name")
+                        Spacer()
+                        Text("IPCC Tool")
+                            .foregroundStyle(.secondary)
+                    }
+                    HStack {
+                        Text("Version")
+                        Spacer()
+                        Text("1.0")
+                            .foregroundStyle(.secondary)
+                    }
                 }
 
                 Section("Design") {

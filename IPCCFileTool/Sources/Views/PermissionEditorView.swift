@@ -17,7 +17,7 @@ struct PermissionEditorView: View {
     }
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             Form {
                 Section("Permission") {
                     HStack {

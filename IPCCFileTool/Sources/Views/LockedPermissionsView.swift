@@ -4,7 +4,7 @@ struct LockedPermissionsView: View {
     @EnvironmentObject private var accessSession: FileAccessSession
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 Section {
                     Button {

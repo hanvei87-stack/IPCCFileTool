@@ -1,6 +1,5 @@
 import Foundation
 
-@MainActor
 final class PermissionLockStore: ObservableObject {
     @Published private(set) var locks: [PermissionLock] = []
 
