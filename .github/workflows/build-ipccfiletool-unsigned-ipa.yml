@@ -19,6 +19,9 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
+      - name: Show project schemes
+        run: xcodebuild -list -project IPCCFileTool/IPCCFileTool.xcodeproj
+
       - name: Build app without signing
         run: |
           set -euxo pipefail
@@ -27,6 +30,7 @@ jobs:
             -scheme IPCCFileTool \
             -configuration Release \
             -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
             -derivedDataPath "$PWD/build/DerivedData" \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
@@ -54,4 +58,3 @@ jobs:
           name: IPCCFileTool_unsigned_ipa
           path: build/IPCCFileTool_unsigned.ipa
           if-no-files-found: error
-

@@ -14,6 +14,7 @@ xcodebuild \
   -scheme "$SCHEME" \
   -configuration Release \
   -sdk iphoneos \
+  -destination 'generic/platform=iOS' \
   -derivedDataPath "$DERIVED_DATA_PATH" \
   CODE_SIGNING_ALLOWED=NO \
   CODE_SIGNING_REQUIRED=NO \
