@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100000000000000000000001 /* IPCCFileToolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000001 /* IPCCFileToolApp.swift */; };
+		100000000000000000000002 /* FileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000002 /* FileItem.swift */; };
+		100000000000000000000003 /* FilePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000003 /* FilePermissions.swift */; };
+		100000000000000000000004 /* FileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000004 /* FileClient.swift */; };
+		100000000000000000000005 /* FileAccessSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000005 /* FileAccessSession.swift */; };
+		100000000000000000000006 /* LocalFileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000006 /* LocalFileClient.swift */; };
+		100000000000000000000007 /* PrivilegedFileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000007 /* PrivilegedFileClient.swift */; };
+		100000000000000000000008 /* HelperFileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000008 /* HelperFileRequest.swift */; };
+		100000000000000000000009 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000009 /* MainTabView.swift */; };
+		10000000000000000000000A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20000000000000000000000A /* HomeView.swift */; };
+		10000000000000000000000B /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20000000000000000000000B /* StatusView.swift */; };
+		10000000000000000000000C /* FileRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20000000000000000000000C /* FileRootView.swift */; };
+		10000000000000000000000D /* FileBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20000000000000000000000D /* FileBrowserView.swift */; };
+		10000000000000000000000E /* PermissionEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20000000000000000000000E /* PermissionEditorView.swift */; };
+		10000000000000000000000F /* PermissionSaveGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20000000000000000000000F /* PermissionSaveGuideView.swift */; };
+		100000000000000000000010 /* PermissionGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000010 /* PermissionGroupView.swift */; };
+		100000000000000000000011 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000011 /* LogView.swift */; };
+		100000000000000000000012 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000012 /* AboutView.swift */; };
+		100000000000000000000013 /* PermissionLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000013 /* PermissionLock.swift */; };
+		100000000000000000000014 /* PermissionLockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000014 /* PermissionLockStore.swift */; };
+		100000000000000000000015 /* LockedPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200000000000000000000015 /* LockedPermissionsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		200000000000000000000001 /* IPCCFileToolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPCCFileToolApp.swift; sourceTree = "<group>"; };
+		200000000000000000000002 /* FileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileItem.swift; sourceTree = "<group>"; };
+		200000000000000000000003 /* FilePermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilePermissions.swift; sourceTree = "<group>"; };
+		200000000000000000000004 /* FileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileClient.swift; sourceTree = "<group>"; };
+		200000000000000000000005 /* FileAccessSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAccessSession.swift; sourceTree = "<group>"; };
+		200000000000000000000006 /* LocalFileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileClient.swift; sourceTree = "<group>"; };
+		200000000000000000000007 /* PrivilegedFileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedFileClient.swift; sourceTree = "<group>"; };
+		200000000000000000000008 /* HelperFileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFileRequest.swift; sourceTree = "<group>"; };
+		200000000000000000000009 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		20000000000000000000000A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		20000000000000000000000B /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		20000000000000000000000C /* FileRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRootView.swift; sourceTree = "<group>"; };
+		20000000000000000000000D /* FileBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserView.swift; sourceTree = "<group>"; };
+		20000000000000000000000E /* PermissionEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionEditorView.swift; sourceTree = "<group>"; };
+		20000000000000000000000F /* PermissionSaveGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionSaveGuideView.swift; sourceTree = "<group>"; };
+		200000000000000000000010 /* PermissionGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionGroupView.swift; sourceTree = "<group>"; };
+		200000000000000000000011 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		200000000000000000000012 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		200000000000000000000013 /* PermissionLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionLock.swift; sourceTree = "<group>"; };
+		200000000000000000000014 /* PermissionLockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionLockStore.swift; sourceTree = "<group>"; };
+		200000000000000000000015 /* LockedPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedPermissionsView.swift; sourceTree = "<group>"; };
+		200000000000000000000020 /* IPCCFileTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPCCFileTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		300000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		400000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000002 /* Sources */,
+				400000000000000000000020 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		400000000000000000000002 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				200000000000000000000001 /* IPCCFileToolApp.swift */,
+				400000000000000000000003 /* Models */,
+				400000000000000000000004 /* Services */,
+				400000000000000000000005 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		400000000000000000000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				200000000000000000000002 /* FileItem.swift */,
+				200000000000000000000003 /* FilePermissions.swift */,
+				200000000000000000000013 /* PermissionLock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		400000000000000000000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				200000000000000000000004 /* FileClient.swift */,
+				200000000000000000000005 /* FileAccessSession.swift */,
+				200000000000000000000006 /* LocalFileClient.swift */,
+				200000000000000000000007 /* PrivilegedFileClient.swift */,
+				200000000000000000000008 /* HelperFileRequest.swift */,
+				200000000000000000000014 /* PermissionLockStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		400000000000000000000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				200000000000000000000009 /* MainTabView.swift */,
+				20000000000000000000000A /* HomeView.swift */,
+				20000000000000000000000B /* StatusView.swift */,
+				20000000000000000000000C /* FileRootView.swift */,
+				20000000000000000000000D /* FileBrowserView.swift */,
+				20000000000000000000000E /* PermissionEditorView.swift */,
+				20000000000000000000000F /* PermissionSaveGuideView.swift */,
+				200000000000000000000010 /* PermissionGroupView.swift */,
+				200000000000000000000011 /* LogView.swift */,
+				200000000000000000000015 /* LockedPermissionsView.swift */,
+				200000000000000000000012 /* AboutView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		400000000000000000000020 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				200000000000000000000020 /* IPCCFileTool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		500000000000000000000001 /* IPCCFileTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 900000000000000000000002 /* Build configuration list for PBXNativeTarget "IPCCFileTool" */;
+			buildPhases = (
+				600000000000000000000001 /* Sources */,
+				300000000000000000000001 /* Frameworks */,
+				700000000000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IPCCFileTool;
+			productName = IPCCFileTool;
+			productReference = 200000000000000000000020 /* IPCCFileTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		800000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					500000000000000000000001 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 900000000000000000000001 /* Build configuration list for PBXProject "IPCCFileTool" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 400000000000000000000001;
+			productRefGroup = 400000000000000000000020 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				500000000000000000000001 /* IPCCFileTool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		700000000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		600000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000001 /* IPCCFileToolApp.swift in Sources */,
+				100000000000000000000002 /* FileItem.swift in Sources */,
+				100000000000000000000003 /* FilePermissions.swift in Sources */,
+				100000000000000000000004 /* FileClient.swift in Sources */,
+				100000000000000000000005 /* FileAccessSession.swift in Sources */,
+				100000000000000000000006 /* LocalFileClient.swift in Sources */,
+				100000000000000000000007 /* PrivilegedFileClient.swift in Sources */,
+				100000000000000000000008 /* HelperFileRequest.swift in Sources */,
+				100000000000000000000009 /* MainTabView.swift in Sources */,
+				10000000000000000000000A /* HomeView.swift in Sources */,
+				10000000000000000000000B /* StatusView.swift in Sources */,
+				10000000000000000000000C /* FileRootView.swift in Sources */,
+				10000000000000000000000D /* FileBrowserView.swift in Sources */,
+				10000000000000000000000E /* PermissionEditorView.swift in Sources */,
+				10000000000000000000000F /* PermissionSaveGuideView.swift in Sources */,
+				100000000000000000000010 /* PermissionGroupView.swift in Sources */,
+				100000000000000000000011 /* LogView.swift in Sources */,
+				100000000000000000000012 /* AboutView.swift in Sources */,
+				100000000000000000000013 /* PermissionLock.swift in Sources */,
+				100000000000000000000014 /* PermissionLockStore.swift in Sources */,
+				100000000000000000000015 /* LockedPermissionsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A00000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A00000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IPCCFileTool;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ipccfiletool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A00000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = IPCCFileTool;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ipccfiletool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		900000000000000000000001 /* Build configuration list for PBXProject "IPCCFileTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000001 /* Debug */,
+				A00000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		900000000000000000000002 /* Build configuration list for PBXNativeTarget "IPCCFileTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000003 /* Debug */,
+				A00000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 800000000000000000000001 /* Project object */;
+}

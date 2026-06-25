@@ -1,0 +1,57 @@
+name: Build IPCCFileTool unsigned IPA
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "IPCCFileTool/**"
+      - ".github/workflows/build-ipccfiletool-unsigned-ipa.yml"
+
+jobs:
+  build:
+    name: Build unsigned IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build app without signing
+        run: |
+          set -euxo pipefail
+          xcodebuild \
+            -project IPCCFileTool/IPCCFileTool.xcodeproj \
+            -scheme IPCCFileTool \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath "$PWD/build/DerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            DEVELOPMENT_TEAM="" \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          set -euxo pipefail
+          APP_PATH="$PWD/build/DerivedData/Build/Products/Release-iphoneos/IPCCFileTool.app"
+          test -d "$APP_PATH"
+
+          rm -rf "$PWD/build/Payload" "$PWD/build/IPCCFileTool_unsigned.ipa"
+          mkdir -p "$PWD/build/Payload"
+          cp -R "$APP_PATH" "$PWD/build/Payload/"
+
+          cd "$PWD/build"
+          /usr/bin/zip -qry IPCCFileTool_unsigned.ipa Payload
+          ls -lh IPCCFileTool_unsigned.ipa
+
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: IPCCFileTool_unsigned_ipa
+          path: build/IPCCFileTool_unsigned.ipa
+          if-no-files-found: error
+
