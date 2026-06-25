@@ -19,33 +19,33 @@ struct PermissionEditorView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section("Permission") {
+                Section("文件权限") {
                     HStack {
-                        Text("Mode")
+                        Text("权限")
                         Spacer()
                         Text(permissions.octalString)
                     }
                     HStack {
-                        Text("Owner")
+                        Text("所有者")
                         Spacer()
                         Text(item.ownerName)
                     }
                     HStack {
-                        Text("Group")
+                        Text("组")
                         Spacer()
                         Text(item.groupName)
                     }
                 }
 
-                PermissionGroupView(title: "User", read: $permissions.userRead, write: $permissions.userWrite, execute: $permissions.userExecute)
-                PermissionGroupView(title: "Group", read: $permissions.groupRead, write: $permissions.groupWrite, execute: $permissions.groupExecute)
-                PermissionGroupView(title: "Other", read: $permissions.otherRead, write: $permissions.otherWrite, execute: $permissions.otherExecute)
+                PermissionGroupView(title: "用户", read: $permissions.userRead, write: $permissions.userWrite, execute: $permissions.userExecute)
+                PermissionGroupView(title: "组", read: $permissions.groupRead, write: $permissions.groupWrite, execute: $permissions.groupExecute)
+                PermissionGroupView(title: "其他", read: $permissions.otherRead, write: $permissions.otherWrite, execute: $permissions.otherExecute)
 
-                Section("Lock") {
-                    Button("Save and Lock Mode") {
+                Section("锁定") {
+                    Button("保存并锁定权限") {
                         saveAndLock()
                     }
-                    Text("A locked mode is saved by this app and restored whenever the file access session is initialized.")
+                    Text("锁定后会保存目标权限，并在下次初始化文件访问时自动恢复。")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
@@ -53,26 +53,26 @@ struct PermissionEditorView: View {
             .navigationTitle(item.name)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("取消") {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button("保存") {
                         save()
                     }
                 }
             }
         }
-        .alert("Notice", isPresented: Binding(
+        .alert("提示", isPresented: Binding(
             get: { alertMessage != nil },
             set: { if !$0 { alertMessage = nil } }
         )) {
-            Button("Guide") {
+            Button("查看说明") {
                 showingGuide = true
             }
-            Button("OK", role: .cancel) { }
+            Button("确定", role: .cancel) { }
         } message: {
             Text(alertMessage ?? "")
         }
@@ -81,7 +81,7 @@ struct PermissionEditorView: View {
                 path: item.url.path,
                 currentMode: item.permissions.octalString,
                 targetMode: permissions.octalString,
-                reason: guideReason ?? alertMessage ?? "Permission save failed"
+                reason: guideReason ?? alertMessage ?? "权限保存失败"
             )
         }
     }
@@ -92,7 +92,7 @@ struct PermissionEditorView: View {
             dismiss()
         } catch {
             guideReason = error.localizedDescription
-            alertMessage = "\(error.localizedDescription)\n\nInitialize file access, then try saving again."
+            alertMessage = "\(error.localizedDescription)\n\n请先初始化文件访问，然后再尝试保存。"
         }
     }
 
@@ -102,7 +102,7 @@ struct PermissionEditorView: View {
             dismiss()
         } catch {
             guideReason = error.localizedDescription
-            alertMessage = "\(error.localizedDescription)\n\nThe lock is only useful after this mode can be applied at least once."
+            alertMessage = "\(error.localizedDescription)\n\n需要至少成功应用一次权限，锁定记录才有意义。"
         }
     }
 }

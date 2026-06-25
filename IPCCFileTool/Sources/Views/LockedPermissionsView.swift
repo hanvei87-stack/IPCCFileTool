@@ -14,13 +14,13 @@ struct LockedPermissionsView: View {
                             accessSession.applyLockedPermissions()
                         }
                     } label: {
-                        Label("Restore Locked Modes", systemImage: "lock.rotation")
+                        Label("恢复锁定权限", systemImage: "lock.rotation")
                     }
                 }
 
-                Section("Locked Items") {
+                Section("锁定项目") {
                     if accessSession.locks.isEmpty {
-                        Text("No locked permissions yet.")
+                        Text("暂无锁定权限")
                             .foregroundStyle(.secondary)
                     } else {
                         ForEach(accessSession.locks) { lock in
@@ -44,7 +44,7 @@ struct LockedPermissionsView: View {
                                     .textSelection(.enabled)
 
                                 if let lastAppliedAt = lock.lastAppliedAt {
-                                    Text("Last applied: \(lastAppliedAt.formatted())")
+                                    Text("上次应用：\(lastAppliedAt.formatted())")
                                         .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
@@ -64,7 +64,7 @@ struct LockedPermissionsView: View {
                     }
                 }
             }
-            .navigationTitle("Locks")
+            .navigationTitle("权限锁定")
         }
     }
 }

@@ -5,27 +5,27 @@ struct MainTabView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("主页", systemImage: "house")
                 }
 
             StatusView()
                 .tabItem {
-                    Label("Status", systemImage: "bolt")
+                    Label("状态", systemImage: "bolt")
                 }
 
             FileRootView()
                 .tabItem {
-                    Label("Files", systemImage: "folder")
+                    Label("文件", systemImage: "folder")
                 }
 
             LockedPermissionsView()
                 .tabItem {
-                    Label("Locks", systemImage: "lock")
+                    Label("锁定", systemImage: "lock")
                 }
 
             AboutView()
                 .tabItem {
-                    Label("About", systemImage: "info.circle")
+                    Label("关于", systemImage: "info.circle")
                 }
         }
     }

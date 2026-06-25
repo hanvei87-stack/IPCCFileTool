@@ -4,26 +4,26 @@ struct AboutView: View {
     var body: some View {
         NavigationView {
             List {
-                Section("App") {
+                Section("应用") {
                     HStack {
-                        Text("Name")
+                        Text("名称")
                         Spacer()
-                        Text("IPCC Tool")
+                        Text("IPCC 工具")
                             .foregroundStyle(.secondary)
                     }
                     HStack {
-                        Text("Version")
+                        Text("版本")
                         Spacer()
                         Text("1.0")
                             .foregroundStyle(.secondary)
                     }
                 }
 
-                Section("Design") {
-                    Text("This is an original file and IPCC utility scaffold. File browsing, folder creation, permission saving, and permission locks all use one shared access session.")
+                Section("说明") {
+                    Text("这是一个原创的文件与 IPCC 工具。文件浏览、新建文件夹、保存权限和权限锁定都共用同一个访问会话。")
                 }
             }
-            .navigationTitle("About")
+            .navigationTitle("关于")
         }
     }
 }

@@ -28,7 +28,7 @@ struct FileRootView: View {
 
                 FileBrowserView(rootURL: rootURL)
             }
-            .navigationTitle("Files")
+            .navigationTitle("文件")
         }
         .fileImporter(
             isPresented: $showingFolderPicker,
@@ -43,11 +43,11 @@ struct FileRootView: View {
                 alertMessage = error.localizedDescription
             }
         }
-        .alert("Notice", isPresented: Binding(
+        .alert("提示", isPresented: Binding(
             get: { alertMessage != nil },
             set: { if !$0 { alertMessage = nil } }
         )) {
-            Button("OK", role: .cancel) { }
+            Button("确定", role: .cancel) { }
         } message: {
             Text(alertMessage ?? "")
         }
@@ -81,12 +81,12 @@ private struct RootStatusBar: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Label(isReady ? "Ready" : "Not initialized", systemImage: isReady ? "checkmark.circle.fill" : "exclamationmark.circle")
+                Label(isReady ? "已初始化" : "未初始化", systemImage: isReady ? "checkmark.circle.fill" : "exclamationmark.circle")
                     .foregroundStyle(isReady ? .green : .orange)
 
                 Spacer()
 
-                Button("Initialize", action: onInitialize)
+                Button("初始化", action: onInitialize)
                     .buttonStyle(.bordered)
             }
 
@@ -100,14 +100,14 @@ private struct RootStatusBar: View {
                 Button {
                     onPickFolder()
                 } label: {
-                    Label("Pick Folder", systemImage: "folder.badge.plus")
+                    Label("选择文件夹", systemImage: "folder.badge.plus")
                 }
                 .buttonStyle(.borderedProminent)
 
                 Button {
                     onUseSandbox()
                 } label: {
-                    Label("Sandbox", systemImage: "house")
+                    Label("沙盒目录", systemImage: "house")
                 }
                 .buttonStyle(.bordered)
             }

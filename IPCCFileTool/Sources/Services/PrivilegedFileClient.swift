@@ -24,7 +24,7 @@ final class PrivilegedFileClient: FileClient {
             domain: "IPCCFileTool.PrivilegedFileClient",
             code: 1,
             userInfo: [
-                NSLocalizedDescriptionKey: "Privileged file backend is not configured."
+                NSLocalizedDescriptionKey: "尚未配置特权文件后端。"
             ]
         )
     }

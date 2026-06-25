@@ -6,33 +6,33 @@ struct StatusView: View {
     var body: some View {
         NavigationView {
             List {
-                Section("File Access") {
+                Section("文件访问") {
                     HStack {
-                        Text("State")
+                        Text("状态")
                         Spacer()
-                        Text(accessSession.isReady ? "Ready" : "Not initialized")
+                        Text(accessSession.isReady ? "已初始化" : "未初始化")
                             .foregroundStyle(accessSession.isReady ? .green : .secondary)
                     }
 
-                    Button("Initialize") {
+                    Button("初始化") {
                         accessSession.initializeAccess()
                     }
                 }
 
-                Section("Permission Locks") {
+                Section("权限锁定") {
                     HStack {
-                        Text("Locked items")
+                        Text("锁定项目")
                         Spacer()
                         Text("\(accessSession.locks.count)")
                     }
 
-                    Button("Restore Locked Modes") {
+                    Button("恢复锁定权限") {
                         accessSession.applyLockedPermissions()
                     }
                     .disabled(!accessSession.isReady)
                 }
             }
-            .navigationTitle("Status")
+            .navigationTitle("状态")
         }
     }
 }

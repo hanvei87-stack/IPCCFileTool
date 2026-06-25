@@ -15,11 +15,11 @@ enum FileClientError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .accessNotInitialized:
-            return "Initialize file access first."
+            return "请先初始化文件访问。"
         case .invalidDirectoryName:
-            return "Invalid folder name."
+            return "文件夹名称无效。"
         case .posixFailure(let operation, let code):
-            return "\(operation) failed with errno \(code)."
+            return "\(operation) 失败，错误码 \(code)。"
         }
     }
 }

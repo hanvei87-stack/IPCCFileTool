@@ -7,7 +7,7 @@ struct LogView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 6) {
                 if lines.isEmpty {
-                    Text("No log entries yet.")
+                    Text("暂无日志")
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(Array(lines.enumerated()), id: \.offset) { _, line in

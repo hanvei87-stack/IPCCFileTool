@@ -15,7 +15,7 @@ struct PermissionSaveGuideView: View {
     var body: some View {
         NavigationView {
             List {
-                Section("Failure") {
+                Section("失败原因") {
                     Text(reason)
                     Text(path)
                         .font(.footnote.monospaced())
@@ -23,75 +23,75 @@ struct PermissionSaveGuideView: View {
                         .textSelection(.enabled)
                 }
 
-                Section("Diagnostics") {
-                    DiagnosticRow(title: "Current mode", value: diagnostics.mode ?? currentMode)
-                    DiagnosticRow(title: "Target mode", value: targetMode)
-                    DiagnosticRow(title: "Exists", value: diagnostics.existsText)
-                    DiagnosticRow(title: "Directory", value: diagnostics.directoryText)
-                    DiagnosticRow(title: "Symlink", value: diagnostics.symlinkText)
-                    DiagnosticRow(title: "Readable", value: diagnostics.readableText)
-                    DiagnosticRow(title: "Writable", value: diagnostics.writableText)
-                    DiagnosticRow(title: "Executable", value: diagnostics.executableText)
-                    DiagnosticRow(title: "Parent writable", value: diagnostics.parentWritableText)
-                    DiagnosticRow(title: "Last error", value: diagnostics.errorText)
+                Section("诊断信息") {
+                    DiagnosticRow(title: "当前权限", value: diagnostics.mode ?? currentMode)
+                    DiagnosticRow(title: "目标权限", value: targetMode)
+                    DiagnosticRow(title: "路径存在", value: diagnostics.existsText)
+                    DiagnosticRow(title: "目录", value: diagnostics.directoryText)
+                    DiagnosticRow(title: "符号链接", value: diagnostics.symlinkText)
+                    DiagnosticRow(title: "可读", value: diagnostics.readableText)
+                    DiagnosticRow(title: "可写", value: diagnostics.writableText)
+                    DiagnosticRow(title: "可执行", value: diagnostics.executableText)
+                    DiagnosticRow(title: "父目录可写", value: diagnostics.parentWritableText)
+                    DiagnosticRow(title: "最后错误", value: diagnostics.errorText)
                 }
 
-                Section("Next Steps") {
+                Section("下一步") {
                     StepActionRow(
                         number: 1,
-                        title: "Initialize file access",
-                        detail: "File browsing and permission saving must share the same access session.",
+                        title: "初始化文件访问",
+                        detail: "文件浏览和权限保存必须共用同一个访问会话。",
                         result: stepResults[1],
-                        actionTitle: accessSession.isReady ? "Ready" : "Initialize"
+                        actionTitle: accessSession.isReady ? "已就绪" : "初始化"
                     ) {
                         accessSession.initializeAccess()
-                        stepResults[1] = accessSession.isReady ? "Initialized" : "Initialization failed"
+                        stepResults[1] = accessSession.isReady ? "已初始化" : "初始化失败"
                     }
 
                     StepActionRow(
                         number: 2,
-                        title: "Check current path",
-                        detail: "Confirm this process can see the selected path.",
+                        title: "检查当前路径",
+                        detail: "确认当前进程可以看到这个路径。",
                         result: stepResults[2],
-                        actionTitle: "Check"
+                        actionTitle: "检查"
                     ) {
                         let nextDiagnostics = PermissionDiagnostics(path: path)
                         diagnostics = nextDiagnostics
-                        stepResults[2] = nextDiagnostics.exists ? "Path exists, mode \(nextDiagnostics.mode ?? "-")" : "Path does not exist"
+                        stepResults[2] = nextDiagnostics.exists ? "路径存在，权限 \(nextDiagnostics.mode ?? "-")" : "路径不存在"
                     }
 
                     StepActionRow(
                         number: 3,
-                        title: "Check write access",
-                        detail: "Confirm the current process already has write access.",
+                        title: "检查写入权限",
+                        detail: "确认当前进程是否已经拥有写入权限。",
                         result: stepResults[3],
-                        actionTitle: "Check"
+                        actionTitle: "检查"
                     ) {
                         let nextDiagnostics = PermissionDiagnostics(path: path)
                         diagnostics = nextDiagnostics
-                        stepResults[3] = nextDiagnostics.parentWritable ? "Parent is writable. Retry saving." : "Parent is not writable. Use a lawful helper or authorized environment."
+                        stepResults[3] = nextDiagnostics.parentWritable ? "父目录可写，可以重试保存。" : "父目录不可写，需要合法 helper 或授权环境。"
                     }
 
                     StepActionRow(
                         number: 4,
-                        title: "Retry save",
-                        detail: "Close this sheet and save again from the permission editor.",
+                        title: "返回保存",
+                        detail: "关闭本页后，在权限编辑页重新保存。",
                         result: stepResults[4],
-                        actionTitle: "Done"
+                        actionTitle: "完成"
                     ) {
-                        stepResults[4] = "Return to the permission editor and retry."
+                        stepResults[4] = "请返回权限编辑页重试。"
                         dismiss()
                     }
                 }
 
-                Section("Still Failing") {
-                    Text("If the error is Operation not permitted or Permission denied, this path is outside the current app process privileges. A normal self-signed app cannot modify protected system directories directly. Use a lawful helper, enterprise/MDM authorization, or a path you already own.")
+                Section("仍然失败") {
+                    Text("如果错误是 Operation not permitted 或 Permission denied，说明该路径超出当前应用进程权限。普通自签应用不能直接修改受保护的系统目录，需要合法 helper、企业/MDM 授权环境，或你本来就拥有权限的可写路径。")
                 }
             }
-            .navigationTitle("Save Guide")
+            .navigationTitle("保存说明")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
+                    Button("完成") {
                         dismiss()
                     }
                 }
@@ -147,13 +147,13 @@ private struct PermissionDiagnostics {
         }
     }
 
-    var existsText: String { exists ? "Yes" : "No" }
-    var directoryText: String { isDirectory ? "Yes" : "No" }
-    var symlinkText: String { isSymlink ? "Yes" : "No" }
-    var readableText: String { readable ? "Yes" : "No" }
-    var writableText: String { writable ? "Yes" : "No" }
-    var executableText: String { executable ? "Yes" : "No" }
-    var parentWritableText: String { parentWritable ? "Yes" : "No" }
+    var existsText: String { exists ? "是" : "否" }
+    var directoryText: String { isDirectory ? "是" : "否" }
+    var symlinkText: String { isSymlink ? "是" : "否" }
+    var readableText: String { readable ? "是" : "否" }
+    var writableText: String { writable ? "是" : "否" }
+    var executableText: String { executable ? "是" : "否" }
+    var parentWritableText: String { parentWritable ? "是" : "否" }
     var errorText: String { error ?? "-" }
 }
 

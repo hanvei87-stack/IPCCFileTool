@@ -6,30 +6,30 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             List {
-                Section("Log") {
+                Section("操作日志") {
                     LogView(lines: accessSession.logLines)
                 }
 
                 Section("IPCC") {
                     Toggle("5G+", isOn: .constant(false))
-                    Toggle("Standalone 5G", isOn: .constant(false))
-                    Toggle("VoNR", isOn: .constant(false))
-                    Button("Initialize and Restore Locks") {
+                    Toggle("独立 5G", isOn: .constant(false))
+                    Toggle("5G 语音", isOn: .constant(false))
+                    Button("初始化并恢复锁定权限") {
                         accessSession.initializeAccess()
                     }
                     .buttonStyle(.borderedProminent)
                 }
 
-                Section("Tools") {
-                    Button("Restart Cellular Network") {
+                Section("辅助工具") {
+                    Button("重启蜂窝网络") {
                         accessSession.restartNetwork()
                     }
-                    Button("Cleanup and Restore Defaults") {
+                    Button("清理并恢复默认") {
                         accessSession.resetDefaults()
                     }
                 }
             }
-            .navigationTitle("IPCC Tool")
+            .navigationTitle("IPCC 工具")
         }
     }
 }

@@ -8,9 +8,9 @@ struct PermissionGroupView: View {
 
     var body: some View {
         Section(title) {
-            Toggle("Read", isOn: $read)
-            Toggle("Write", isOn: $write)
-            Toggle("Execute", isOn: $execute)
+            Toggle("读", isOn: $read)
+            Toggle("写", isOn: $write)
+            Toggle("执行", isOn: $execute)
         }
     }
 }

@@ -51,18 +51,18 @@ struct FileBrowserView: View {
         .refreshable {
             reload()
         }
-        .alert("Notice", isPresented: Binding(
+        .alert("提示", isPresented: Binding(
             get: { alertMessage != nil },
             set: { if !$0 { alertMessage = nil } }
         )) {
-            Button("OK", role: .cancel) { }
+            Button("确定", role: .cancel) { }
         } message: {
             Text(alertMessage ?? "")
         }
-        .alert("New Folder", isPresented: $showingNewFolder) {
-            TextField("Folder name", text: $newFolderName)
-            Button("Cancel", role: .cancel) { newFolderName = "" }
-            Button("Create") {
+        .alert("新建文件夹", isPresented: $showingNewFolder) {
+            TextField("文件夹名称", text: $newFolderName)
+            Button("取消", role: .cancel) { newFolderName = "" }
+            Button("创建") {
                 createFolder()
             }
         }
